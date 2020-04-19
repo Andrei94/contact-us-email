@@ -1,0 +1,5 @@
+profile: function-aws
+defaultPackage: contact.us.email
+---
+testFramework: junit
+sourceLanguage: java
