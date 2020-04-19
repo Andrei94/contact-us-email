@@ -1,3 +1,13 @@
 micronaut:
   function:
     name: contact-us-email
+  server:
+    port: 8086
+    cors:
+      enabled: true
+      configurations:
+        web:
+          allowedOrigins:
+            - http://localhost:4200
+          allowedMethods:
+            - POST
