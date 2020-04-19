@@ -9,5 +9,5 @@ import javax.inject.Named;
 @FunctionClient
 public interface ContactUsEmailClient {
 	@Named("contact-us-email")
-	Single<ContactUsEmail> apply(@Body ContactUsEmail body);
+	Single<Boolean> apply(@Body ContactUsEmail body);
 }

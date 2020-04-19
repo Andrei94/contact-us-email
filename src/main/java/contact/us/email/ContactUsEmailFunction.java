@@ -10,9 +10,9 @@ import java.io.IOException;
 import java.util.function.Function;
 
 @FunctionBean("contact-us-email")
-public class ContactUsEmailFunction extends FunctionInitializer implements Function<ContactUsEmail, ContactUsEmail> {
+public class ContactUsEmailFunction extends FunctionInitializer implements Function<ContactUsEmail, Boolean> {
 	@Override
-	public ContactUsEmail apply(ContactUsEmail msg) {
+	public Boolean apply(ContactUsEmail msg) {
 		SesClient build = SesClient.builder().region(Region.EU_CENTRAL_1).build();
 		build.sendEmail(SendEmailRequest.builder()
 				.destination(Destination.builder().toAddresses("andreiprecup@yahoo.com").build())
@@ -24,7 +24,7 @@ public class ContactUsEmailFunction extends FunctionInitializer implements Funct
 						.build())
 				.build()
 		);
-		return msg;
+		return true;
 	}
 
 	/**

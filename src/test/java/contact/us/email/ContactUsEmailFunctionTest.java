@@ -16,6 +16,6 @@ public class ContactUsEmailFunctionTest {
 	public void testFunction() {
 		ContactUsEmail body = new ContactUsEmail();
 		body.setName("contact-us-email");
-		assertEquals("contact-us-email", client.apply(body).blockingGet().getName());
+		assertEquals(true, client.apply(body).blockingGet());
 	}
 }
